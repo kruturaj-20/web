@@ -1,0 +1,145 @@
+.footer {
+  background: var(--background);
+  padding: var(--sp-24) 0 var(--sp-8);
+  border-top: 1px solid var(--border);
+  position: relative;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--sp-16);
+  margin-bottom: var(--sp-12);
+}
+
+.brand {
+  max-width: 400px;
+}
+
+.logo {
+  font-family: var(--font-montserrat);
+  font-weight: 800;
+  font-size: 1.75rem;
+  letter-spacing: -0.05em;
+  color: white;
+  margin-bottom: var(--sp-6);
+  display: block;
+  text-decoration: none;
+}
+
+.brandDesc {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: var(--sp-8);
+}
+
+.socials {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.socialLink {
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: all 0.3s var(--ease-premium);
+}
+
+.socialLink:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.linksGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-20);
+}
+
+.linkGroup h4 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: white;
+  font-weight: 800;
+  margin-bottom: var(--sp-6);
+}
+
+.linkGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.linkGroup a {
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s var(--ease-premium);
+  text-decoration: none;
+}
+
+.linkGroup a:hover {
+  color: white;
+  transform: translateX(4px);
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contactInfo p {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--text-muted);
+}
+
+.bottom {
+  padding-top: var(--sp-12);
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.legal {
+  display: flex;
+  gap: 3rem;
+}
+
+.legal a:hover {
+  color: white;
+}
+
+@media (max-width: 1024px) {
+  .content {
+    flex-direction: column;
+    gap: 6rem;
+  }
+  .linksGrid {
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .linksGrid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  .linkGroup h4 {
+    margin-bottom: 1.5rem;
+  }
+}

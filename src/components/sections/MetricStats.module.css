@@ -1,0 +1,159 @@
+.metricStats {
+  padding: 5rem 2rem;
+  background: var(--background);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.title {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ── Bento Grid ───────────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(2, 200px);
+  gap: 1.25rem;
+}
+
+.card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 24px;
+  padding: 2rem;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card:hover {
+  border-color: rgba(var(--primary-rgb), 0.3);
+  background: rgba(var(--primary-rgb), 0.03);
+  transform: translateY(-5px);
+}
+
+/* Span definitions */
+.cardUptime { grid-column: span 7; }
+.cardSpeed { grid-column: span 5; }
+.cardRegions { grid-column: span 5; }
+.cardSecurity { grid-column: span 7; }
+
+.iconWrapper {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(var(--primary-rgb), 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+}
+
+.content h3 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: 0.75rem;
+}
+
+/* ── Specific card adjustments ────────────────────────────── */
+.pulseDot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: var(--success, #10b981);
+  border-radius: 50%;
+  margin-right: 0.75rem;
+  position: relative;
+}
+
+.pulseDot::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid var(--success, #10b981);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-rows: auto;
+  }
+  .cardUptime, .cardSecurity { grid-column: span 12; }
+  .cardSpeed, .cardRegions { grid-column: span 6; }
+}
+
+@media (max-width: 640px) {
+  .cardSpeed, .cardRegions { grid-column: span 12; }
+  .metricStats { padding: 5rem 1rem; }
+  .value { font-size: 2rem; }
+}
+
+/* ── Background Decoration ────────────────────────────────── */
+.bgGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(circle, rgba(var(--primary-rgb), 0.05) 0%, transparent 70%);
+  filter: blur(100px);
+  z-index: -1;
+  pointer-events: none;
+}

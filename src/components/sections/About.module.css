@@ -1,0 +1,164 @@
+.about {
+  background: var(--background);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--sp-12);
+  align-items: center;
+  position: relative;
+}
+
+.bgText {
+  position: absolute;
+  top: -10%;
+  left: -5%;
+  font-size: 20vw;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.02);
+  line-height: 1;
+  pointer-events: none;
+  z-index: 0;
+  white-space: nowrap;
+}
+
+.title {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  margin-top: var(--sp-2);
+  margin-bottom: var(--sp-6);
+  line-height: 1.1;
+  font-weight: 900;
+}
+
+.values {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.valueItem {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.valueIcon {
+  width: 48px;
+  height: 48px;
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.valueTitle {
+  font-size: 1.25rem;
+  margin-bottom: var(--sp-1);
+  font-weight: 700;
+  color: white;
+}
+
+.valueDesc {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.visual {
+  position: relative;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageCard {
+  width: 90%;
+  height: 80%;
+  z-index: 2;
+  position: relative;
+}
+
+.imageInner {
+  height: 100%;
+  padding: var(--sp-8);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.mainImage {
+  flex: 1;
+  background: linear-gradient(135deg, var(--surface), var(--background));
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.imageGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle, var(--primary-glow) 0%, transparent 60%);
+  transform: translate(-50%, -50%);
+  animation: float 20s linear infinite;
+}
+
+.experienceBadge {
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  background: var(--primary);
+  padding: 2.5rem;
+  border-radius: 50%;
+  text-align: center;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20px 40px rgba(var(--primary-rgb), 0.3);
+  z-index: 10;
+}
+
+.expNumber {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-montserrat);
+}
+
+.expText {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 6rem;
+  }
+  .imageCard {
+    height: 400px;
+  }
+  .experienceBadge {
+    padding: 2rem;
+    transform: translate(0, 0);
+    bottom: 2rem;
+    right: 2rem;
+  }
+}

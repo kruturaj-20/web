@@ -1,0 +1,159 @@
+.pipelineSection {
+  padding: 6rem 2rem;
+  background: var(--background);
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 6rem;
+}
+
+.label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.title {
+  font-size: clamp(2.25rem, 4.5vw, 3rem);
+  font-weight: 900;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+/* ── Pipeline Container ────────────────────────────────────── */
+.pipeline {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+/* ── The Connector Line ────────────────────────────────────── */
+.connectorLine {
+  position: absolute;
+  top: 45px; /* Center of the icon */
+  left: 5%;
+  right: 5%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.05);
+  z-index: 0;
+}
+
+.lineGlow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 30%;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  animation: moveGlow 4s linear infinite;
+}
+
+@keyframes moveGlow {
+  0% { left: -30%; }
+  100% { left: 100%; }
+}
+
+/* ── Pipeline Steps ────────────────────────────────────────── */
+.step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+  position: relative;
+}
+
+.iconWrapper {
+  width: 90px;
+  height: 90px;
+  background: #0a0f24;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  transition: all 0.4s ease;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.step:hover .iconWrapper {
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(var(--primary-rgb), 0.2);
+}
+
+.stepIcon {
+  transition: transform 0.4s ease;
+}
+
+.step:hover .stepIcon {
+  transform: scale(1.1);
+}
+
+.stepTitle {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.stepDesc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 240px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .pipeline {
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+  }
+  .connectorLine {
+    top: 5%;
+    bottom: 5%;
+    left: 45px;
+    right: auto;
+    width: 2px;
+    height: auto;
+  }
+  .lineGlow {
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(180deg, transparent, var(--primary), transparent);
+    animation: moveGlowVertical 4s linear infinite;
+  }
+  .stepDesc { max-width: 400px; }
+}
+
+@keyframes moveGlowVertical {
+  0% { top: -30%; }
+  100% { top: 100%; }
+}
+
+@media (max-width: 640px) {
+  .pipelineSection { padding: 4rem 1rem; }
+  .header { margin-bottom: 4rem; }
+}

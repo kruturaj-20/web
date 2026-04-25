@@ -1,0 +1,145 @@
+.codeToCloud {
+  padding: 8rem 2rem;
+  background: var(--background);
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 900;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ── Split View Layout ─────────────────────────────────────── */
+.splitView {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  position: relative;
+}
+
+/* ── Editor Mockup ─────────────────────────────────────────── */
+.editor {
+  background: #0d1117;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+}
+
+.editorHeader {
+  height: 40px;
+  background: rgba(255, 255, 255, 0.03);
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  gap: 8px;
+}
+
+.dot { width: 10px; height: 10px; border-radius: 50%; }
+
+.editorContent {
+  padding: 1.5rem;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.line { display: flex; gap: 1rem; margin-bottom: 0.25rem; }
+.ln { color: rgba(255, 255, 255, 0.2); width: 20px; text-align: right; }
+.keyword { color: #ff7b72; }
+.func { color: #d2a8ff; }
+.string { color: #a5d6ff; }
+.comment { color: #8b949e; }
+
+/* ── Browser Mockup ────────────────────────────────────────── */
+.browser {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 40px 100px rgba(var(--primary-rgb), 0.2);
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.browserHeader {
+  height: 40px;
+  background: #f1f3f4;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.addressBar {
+  flex: 1;
+  height: 24px;
+  background: #fff;
+  border-radius: 12px;
+  margin: 0 1rem;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  padding: 0 0.75rem;
+  color: #5f6368;
+}
+
+.browserContent {
+  flex: 1;
+  background: #f8f9fa;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.skeletonTitle { width: 60%; height: 24px; background: #e9ecef; border-radius: 4px; }
+.skeletonText { width: 100%; height: 12px; background: #e9ecef; border-radius: 2px; }
+
+/* ── Connection Arrow ──────────────────────────────────────── */
+.arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--primary);
+  z-index: 2;
+  filter: drop-shadow(0 0 10px rgba(var(--primary-rgb), 0.5));
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .splitView { grid-template-columns: 1fr; gap: 4rem; }
+  .arrow { transform: translate(-50%, -50%) rotate(90deg); }
+}

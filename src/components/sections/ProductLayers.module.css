@@ -1,0 +1,132 @@
+.layersSection {
+  padding: 8rem 2rem;
+  background: var(--background);
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 6rem;
+}
+
+.label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 900;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ── 3D Stack ──────────────────────────────────────────────── */
+.stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  perspective: 1000px;
+}
+
+.layer {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 24px;
+  padding: 2.5rem;
+  transform: rotateX(25deg);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.03);
+}
+
+.layer:hover {
+  transform: rotateX(0deg) scale(1.02) translateY(-10px);
+  background: rgba(var(--primary-rgb), 0.04);
+  border-color: rgba(var(--primary-rgb), 0.3);
+  box-shadow: 
+    0 40px 80px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(var(--primary-rgb), 0.1);
+}
+
+.layerContent {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.iconBox {
+  width: 80px;
+  height: 80px;
+  background: rgba(var(--primary-rgb), 0.1);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+.layer:hover .iconBox {
+  background: var(--primary);
+  color: #fff;
+}
+
+.layerTitle {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.layerDesc {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ── Connector Lines ────────────────────────────────────────── */
+.connector {
+  width: 2px;
+  height: 20px;
+  background: linear-gradient(to bottom, var(--primary), transparent);
+  opacity: 0.3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .layer { transform: rotateX(0deg); padding: 1.5rem; }
+  .layerContent { grid-template-columns: 1fr; gap: 1rem; text-align: center; }
+  .iconBox { margin: 0 auto; }
+}
+
+/* Specific Layer Colors */
+.layerExperience { z-index: 3; }
+.layerIntelligence { z-index: 2; }
+.layerInfrastructure { z-index: 1; }

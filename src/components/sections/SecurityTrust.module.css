@@ -1,0 +1,156 @@
+.securityTrust {
+  padding: 8rem 2rem;
+  background: var(--background);
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 900;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ── Badges Section ────────────────────────────────────────── */
+.badgesRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  margin-bottom: 6rem;
+  flex-wrap: wrap;
+}
+
+.badgeItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.badgeItem:hover {
+  opacity: 1;
+}
+
+.badgeIcon {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+}
+
+.badgeName {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ── Security Cards ─────────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  padding: 2.5rem;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  background: rgba(var(--primary-rgb), 0.03);
+  border-color: rgba(var(--primary-rgb), 0.2);
+  transform: translateY(-5px);
+}
+
+.iconWrapper {
+  width: 48px;
+  height: 48px;
+  background: rgba(var(--primary-rgb), 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.cardDesc {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ── Background Decoration ─────────────────────────────────── */
+.bgGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(circle, rgba(var(--primary-rgb), 0.04) 0%, transparent 70%);
+  filter: blur(100px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+  .badgesRow { gap: 2.5rem; }
+}
+
+@media (max-width: 640px) {
+  .grid { grid-template-columns: 1fr; }
+  .securityTrust { padding: 5rem 1rem; }
+  .badgesRow { gap: 1.5rem; }
+}

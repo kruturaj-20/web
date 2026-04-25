@@ -1,0 +1,84 @@
+.faq {
+  background: var(--background);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: var(--sp-24);
+  align-items: flex-start;
+}
+
+.header {
+  position: sticky;
+  top: 150px;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  margin-top: var(--sp-2);
+  margin-bottom: var(--sp-6);
+  line-height: 1.1;
+}
+
+.subtitle {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.faqCard {
+  border-radius: 24px;
+}
+
+.faqItem {
+  width: 100%;
+}
+
+.questionButton {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--sp-8) var(--sp-10);
+  background: none;
+  border: none;
+  color: white;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.4s var(--ease-premium);
+}
+
+.questionText {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.answerWrapper {
+  overflow: hidden;
+}
+
+.answerContent {
+  padding: 0 var(--sp-10) var(--sp-10);
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  .header {
+    position: static;
+    text-align: center;
+  }
+}
