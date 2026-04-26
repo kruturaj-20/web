@@ -27,6 +27,29 @@
   gap: 1rem;
 }
 
+.annualLabelWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.discountBadge {
+  background: rgba(var(--success-rgb), 0.1);
+  color: var(--success);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 99px;
+  border: 1px solid rgba(var(--success-rgb), 0.2);
+  animation: badge-pulse 2s infinite;
+}
+
+@keyframes badge-pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(var(--success-rgb), 0.2); }
+  50% { transform: scale(1.05); box-shadow: 0 0 0 6px rgba(var(--success-rgb), 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(var(--success-rgb), 0); }
+}
+
 .toggleLabel {
   font-size: 0.95rem;
   font-weight: 600;
@@ -235,5 +258,22 @@
 
   .highlightedCard:hover {
     transform: translateY(-5px);
+  }
+}
+
+@media (max-width: 480px) {
+  .toggleWrapper {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .annualLabelWrapper {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .discountBadge {
+    font-size: 0.65rem;
+  }
+  .price {
+    font-size: 2.5rem;
   }
 }

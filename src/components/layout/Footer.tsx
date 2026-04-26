@@ -15,7 +15,7 @@ const Footer = () => {
         <div className={styles.content}>
           <div className={styles.brand}>
             <Link href="/" className={styles.logo}>
-              VANGUARD<span className="gradient-text">DIGITAL</span>
+              HEXSTACK<span className="gradient-text">DIGITAL</span>
             </Link>
             <p className={styles.brandDesc}>
               Engineering exceptional digital experiences for the next generation of industry leaders.
@@ -49,7 +49,7 @@ const Footer = () => {
             <div className={styles.linkGroup}>
               <h4>Contact</h4>
               <div className={styles.contactInfo}>
-                <p><Mail size={16} /> hello@vanguard.digital</p>
+                <p><Mail size={16} /> hello@hexstack.digital</p>
                 <p><Phone size={16} /> +1 (555) 123-4567</p>
                 <p><MapPin size={16} /> New York, NY</p>
               </div>
@@ -58,7 +58,7 @@ const Footer = () => {
         </div>
 
         <div className={styles.bottom}>
-          <p>&copy; {currentYear} Vanguard Digital. All rights reserved.</p>
+          <p>&copy; {currentYear} Hexstack Digital. All rights reserved.</p>
           <div className={styles.legal}>
             <Link href="#">Privacy Policy</Link>
             <Link href="#">Terms of Service</Link>

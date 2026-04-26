@@ -34,7 +34,7 @@ const VelocityGrid = () => {
           <span className={styles.label}>The Success Roadmap</span>
           <h2 className={styles.title}>Velocity at every stage.</h2>
           <p className={styles.subtitle}>
-            Experience the compounding value of the Vanguard platform as your product evolves from MVP to enterprise scale.
+            Experience the compounding value of the Hexstack platform as your product evolves from MVP to enterprise scale.
           </p>
         </div>
 

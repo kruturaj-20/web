@@ -44,26 +44,26 @@ const ProblemSolution = () => {
 
           <div className={styles.connector}>VS</div>
 
-          {/* Vanguard Way */}
-          <div className={`${styles.card} ${styles.vanguardCard}`}>
-            <span className={styles.vanguardLabel}>The Vanguard Way</span>
+          {/* Hexstack Way */}
+          <div className={`${styles.card} ${styles.hexstackCard}`}>
+            <span className={styles.hexstackLabel}>The Hexstack Way</span>
             <h3 className={styles.cardTitle}>Unified & Scalable</h3>
             
             <div className={styles.list}>
-              <div className={`${styles.item} ${styles.vanguardItem}`}>
-                <Workflow className={styles.vanguardIcon} size={20} />
+              <div className={`${styles.item} ${styles.hexstackItem}`}>
+                <Workflow className={styles.hexstackIcon} size={20} />
                 <span>End-to-end integrated platform experience</span>
               </div>
-              <div className={`${styles.item} ${styles.vanguardItem}`}>
-                <Zap className={styles.vanguardIcon} size={20} />
+              <div className={`${styles.item} ${styles.hexstackItem}`}>
+                <Zap className={styles.hexstackIcon} size={20} />
                 <span>Instant deployment with zero-config setup</span>
               </div>
-              <div className={`${styles.item} ${styles.vanguardItem}`}>
-                <ShieldCheck className={styles.vanguardIcon} size={20} />
+              <div className={`${styles.item} ${styles.hexstackItem}`}>
+                <ShieldCheck className={styles.hexstackIcon} size={20} />
                 <span>Automated security and compliance by default</span>
               </div>
-              <div className={`${styles.item} ${styles.vanguardItem}`}>
-                <TrendingUp className={styles.vanguardIcon} size={20} />
+              <div className={`${styles.item} ${styles.hexstackItem}`}>
+                <TrendingUp className={styles.hexstackIcon} size={20} />
                 <span>Infinite scalability with autonomic systems</span>
               </div>
             </div>

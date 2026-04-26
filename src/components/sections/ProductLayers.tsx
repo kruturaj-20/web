@@ -37,7 +37,7 @@ const ProductLayers = () => {
           <span className={styles.label}>Technical Architecture</span>
           <h2 className={styles.title}>The full-stack of<br />enterprise excellence.</h2>
           <p className={styles.subtitle}>
-            Vanguard is built as a three-dimensional ecosystem where every layer is engineered for maximum performance.
+            Hexstack is built as a three-dimensional ecosystem where every layer is engineered for maximum performance.
           </p>
         </div>
 

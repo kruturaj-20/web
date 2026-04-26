@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import MagneticButton from '../ui/MagneticButton';
-import styles from './Navbar.module.css';
+import styles from './Navbar.module.css'; // Importing CSS modules
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -44,8 +44,8 @@ const Navbar = () => {
       aria-label="Main navigation"
     >
       <div className={`container ${styles.navContainer}`}>
-        <Link href="/" className={styles.logo} aria-label="Vanguard Platform – Home">
-          VANGUARD<span className="gradient-text">PLATFORM</span>
+        <Link href="/" className={styles.logo} aria-label="Hexstack Platform – Home">
+          HEXSTACK<span className="gradient-text">PLATFORM</span>
         </Link>
 
         <div className={styles.desktopLinks} role="list">
@@ -72,7 +72,7 @@ const Navbar = () => {
             transition={{ delay: 1, duration: 0.8, ease: 'easeOut' }}
           >
             <MagneticButton strength={0.2}>
-              <button className="button button-primary" aria-label="Get started with Vanguard Platform">
+              <button className="button button-primary" aria-label="Get started with Hexstack">
                 Get Started <ArrowRight size={18} aria-hidden="true" />
               </button>
             </MagneticButton>

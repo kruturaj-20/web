@@ -82,7 +82,7 @@ const ClientTrust = () => (
 
     {/* Bottom note */}
     <p className={styles.footnote}>
-      and <strong>500+</strong> more companies building with Vanguard
+      and <strong>500+</strong> more companies building with Hexstack
     </p>
   </section>
 );

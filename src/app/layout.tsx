@@ -14,8 +14,8 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Vanguard Digital | Premium Creative Agency",
-  description: "Award-winning digital agency specializing in website development, app development, and social media marketing. We build the future of digital experiences.",
+  title: "Hexstack Platform | Premium Digital Engineering",
+  description: "Award-winning digital engineering platform specializing in high-performance websites, apps, and ecosystems. We build the future of digital experiences.",
 };
 
 import Navbar from "@/components/layout/Navbar";

@@ -24,7 +24,7 @@ const PlatformEcosystem = () => {
           <span className={styles.label}>The Complete Ecosystem</span>
           <h2 className={styles.title}>All your technical needs,<br />in one unified hub.</h2>
           <p className={styles.subtitle}>
-            Vanguard integrates every layer of the modern digital stack into a single, high-performance platform.
+            Hexstack integrates every layer of the modern digital stack into a single, high-performance platform.
           </p>
         </div>
 

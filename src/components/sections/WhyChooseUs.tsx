@@ -31,7 +31,7 @@ const WhyChooseUs = () => {
         <div className={styles.grid}>
           <div className={styles.content}>
             <motion.span className="gradient-text" style={{ fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' }}>Platform Advantages</motion.span>
-            <h2 className={styles.title}>Why teams build on <span className="gradient-text">Vanguard</span>.</h2>
+            <h2 className={styles.title}>Why teams build on <span className="gradient-text">Hexstack</span>.</h2>
             <p className={styles.description}>
               In a sea of fragmented tools and generic agencies, we provide a unified platform. We don't just build software; we engineer scalable businesses.
             </p>

@@ -44,9 +44,9 @@ export default function Home() {
       <WhyChooseUs />
       <Results />
       <Testimonials />
-      <Pricing />
+      {/* <Pricing /> */}
       <FAQ />
-      <CTA />
+      {/* <CTA /> */}
       <Contact />
     </>
   );

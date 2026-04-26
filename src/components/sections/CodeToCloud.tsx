@@ -28,7 +28,7 @@ const CodeToCloud = () => {
               <div className={styles.dot} style={{ background: '#ff5f57' }} />
               <div className={styles.dot} style={{ background: '#febc2e' }} />
               <div className={styles.dot} style={{ background: '#28c840' }} />
-              <span style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.3)', marginLeft: '1rem' }}>vanguard.config.js</span>
+              <span style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.3)', marginLeft: '1rem' }}>hexstack.config.js</span>
             </div>
             <div className={styles.editorContent}>
               <div className={styles.line}><span className={styles.ln}>1</span><span><span className={styles.keyword}>export default</span> <span className={styles.func}>defineConfig</span>({'{'}</span></div>
@@ -67,7 +67,7 @@ const CodeToCloud = () => {
               <div className={styles.dot} style={{ background: '#dadce0', width: 8, height: 8 }} />
               <div className={styles.addressBar}>
                 <Lock size={10} style={{ marginRight: 6 }} />
-                https://vanguard-app.io/dashboard
+                https://hexstack-app.io/dashboard
               </div>
             </div>
             <div className={styles.browserContent}>

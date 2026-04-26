@@ -55,7 +55,7 @@ const Services = () => {
             className="gradient-text"
             style={{ fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' }}
           >
-            The Vanguard Platform
+            The Hexstack Platform
           </motion.span>
           <h2 className={styles.title}>Everything you need to <span className="gradient-text">scale</span>.</h2>
           <p className={styles.subtitle}>

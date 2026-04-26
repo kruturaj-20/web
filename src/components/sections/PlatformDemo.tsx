@@ -37,7 +37,7 @@ const PlatformDemo = () => {
       <div className={styles.container}>
         <div className={styles.header}>
           <span className={styles.label}>Product in Action</span>
-          <h2 className={styles.title}>The power of Vanguard,<br />at your fingertips.</h2>
+          <h2 className={styles.title}>The power of Hexstack,<br />at your fingertips.</h2>
           <p className={styles.subtitle}>
             Experience how our platform simplifies the most complex parts of digital engineering.
           </p>
@@ -68,7 +68,7 @@ const PlatformDemo = () => {
               <div className={styles.dot} style={{ background: '#febc2e' }} />
               <div className={styles.dot} style={{ background: '#28c840' }} />
               <div style={{ marginLeft: '1rem', fontSize: '0.75rem', color: 'rgba(255,255,255,0.4)', fontWeight: 600 }}>
-                vanguard_platform / {activeTab === 'dev' ? 'deploy' : activeTab === 'sec' ? 'security' : 'analytics'}
+                hexstack_platform / {activeTab === 'dev' ? 'deploy' : activeTab === 'sec' ? 'security' : 'analytics'}
               </div>
             </div>
 
@@ -93,12 +93,12 @@ const PlatformDemo = () => {
                       transition={{ delay: 0.3 }}
                       className={styles.terminal}
                     >
-                      <div>$ vanguard deploy --prod</div>
+                      <div>$ hexstack deploy --prod</div>
                       <div style={{ color: 'var(--text-muted)' }}>Found 124 files...</div>
                       <div style={{ color: 'var(--primary)' }}>Optimizing assets... (1.2s)</div>
                       <div style={{ color: 'var(--success)' }}>✔ Production build complete.</div>
                       <div style={{ color: 'var(--success)' }}>✔ Deployed to 42 edge locations.</div>
-                      <div style={{ color: '#fff', marginTop: '0.5rem' }}>Live at: https://vanguard-app.io</div>
+                      <div style={{ color: '#fff', marginTop: '0.5rem' }}>Live at: https://hexstack-app.io</div>
                     </motion.div>
                   </motion.div>
                 )}

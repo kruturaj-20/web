@@ -11,7 +11,8 @@ const pricingPlans = [
   {
     name: 'Starter',
     description: 'Perfect for early-stage startups validating their product.',
-    price: '$4,900',
+    priceMonthly: '$4,900',
+    priceAnnual: '$3,900',
     period: '/project',
     features: [
       { name: 'Custom Landing Page', included: true },
@@ -27,7 +28,8 @@ const pricingPlans = [
   {
     name: 'Growth',
     description: 'For scaling companies needing high-performance platforms.',
-    price: '$9,500',
+    priceMonthly: '$9,500',
+    priceAnnual: '$7,600',
     period: '/project',
     features: [
       { name: 'Everything in Starter', included: true },
@@ -43,7 +45,8 @@ const pricingPlans = [
   {
     name: 'Enterprise',
     description: 'Dedicated team and ongoing iteration for established brands.',
-    price: '$4,500',
+    priceMonthly: '$4,500',
+    priceAnnual: '$3,600',
     period: '/month',
     features: [
       { name: 'Dedicated Development Pod', included: true },
@@ -79,7 +82,7 @@ const Pricing = () => {
           </p>
           
           <div className={styles.toggleWrapper}>
-            <span className={`${styles.toggleLabel} ${!isAnnual ? styles.activeLabel : ''}`}>Project</span>
+            <span className={`${styles.toggleLabel} ${!isAnnual ? styles.activeLabel : ''}`}>Standard</span>
             <button 
               className={styles.toggle}
               onClick={() => setIsAnnual(!isAnnual)}
@@ -87,7 +90,10 @@ const Pricing = () => {
             >
               <div className={`${styles.toggleKnob} ${isAnnual ? styles.knobActive : ''}`} />
             </button>
-            <span className={`${styles.toggleLabel} ${isAnnual ? styles.activeLabel : ''}`}>Retainer</span>
+            <div className={styles.annualLabelWrapper}>
+              <span className={`${styles.toggleLabel} ${isAnnual ? styles.activeLabel : ''}`}>Annual Plan</span>
+              <span className={styles.discountBadge}>Save 20%</span>
+            </div>
           </div>
         </div>
 
@@ -108,7 +114,15 @@ const Pricing = () => {
                 <h3 className={styles.planName}>{plan.name}</h3>
                 <p className={styles.planDesc}>{plan.description}</p>
                 <div className={styles.priceContainer}>
-                  <span className={styles.price}>{plan.price}</span>
+                  <motion.span 
+                    key={isAnnual ? 'annual' : 'monthly'}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className={styles.price}
+                  >
+                    {isAnnual ? plan.priceAnnual : plan.priceMonthly}
+                  </motion.span>
                   <span className={styles.period}>{plan.period}</span>
                 </div>
               </div>

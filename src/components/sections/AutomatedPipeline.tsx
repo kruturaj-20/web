@@ -33,7 +33,7 @@ const AutomatedPipeline = () => {
     <section className={styles.pipelineSection} id="how-it-works">
       <div className={styles.container}>
         <div className={styles.header}>
-          <span className={styles.label}>The Vanguard Engine</span>
+          <span className={styles.label}>The Hexstack Engine</span>
           <h2 className={styles.title}>From idea to global scale.<br />Fully automated.</h2>
         </div>
 

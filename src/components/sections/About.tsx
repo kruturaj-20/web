@@ -40,7 +40,7 @@ const About = () => {
       <div ref={containerRef} className="container">
         <div className={styles.grid}>
           <motion.div style={{ x: bgX }} className={styles.bgText}>
-            VANGUARD
+            HEXSTACK
           </motion.div>
           
           <div className={styles.content}>
@@ -52,9 +52,9 @@ const About = () => {
             >
               OUR STORY
             </motion.span>
-            <h2 className={styles.title}>We are <span className="gradient-text">Vanguard</span>.</h2>
+            <h2 className={styles.title}>We are <span className="gradient-text">Hexstack</span>.</h2>
             <p className="lead" style={{ marginBottom: 'var(--sp-8)' }}>
-              Founded at the intersection of Art and Technology, Vanguard Digital is a boutique creative powerhouse. We don't just build websites; we engineer digital legacies for brands that refuse to be ignored.
+              Founded at the intersection of Art and Technology, Hexstack Digital is a boutique creative powerhouse. We don't just build websites; we engineer digital legacies for brands that refuse to be ignored.
             </p>
 
             <div className={styles.values}>

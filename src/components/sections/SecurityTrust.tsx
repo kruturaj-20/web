@@ -39,7 +39,7 @@ const SecurityTrust = () => {
           <span className={styles.label}>Bank-Grade Security</span>
           <h2 className={styles.title}>Enterprise trust,<br />built-in by default.</h2>
           <p className={styles.subtitle}>
-            Vanguard is designed with a security-first mindset, ensuring your data and infrastructure are protected at every layer.
+            Hexstack is designed with a security-first mindset, ensuring your data and infrastructure are protected at every layer.
           </p>
         </div>
 

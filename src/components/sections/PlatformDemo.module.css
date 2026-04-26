@@ -219,6 +219,11 @@
   .tab { flex: 1; min-width: 200px; }
 }
 
-@media (max-width: 640px) {
-  .tab { min-width: 100%; }
+@media (max-width: 768px) {
+  .platformDemo { padding: 4rem 1rem; }
+  .display { height: auto; min-height: 350px; }
+  .tabTitle { font-size: 1rem; }
+  .tabDesc { display: none; }
+  .windowContent { padding: 1.25rem; }
+  .statsGrid { grid-template-columns: 1fr; }
 }

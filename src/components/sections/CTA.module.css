@@ -52,8 +52,18 @@
 }
 
 @media (max-width: 768px) {
+  .cta {
+    padding: 6rem 0;
+  }
   .glassCard {
-    padding: 4rem 2rem;
-    border-radius: 40px;
+    padding: 3.5rem 1.5rem;
+    border-radius: 32px;
+  }
+  .title {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+  }
+  .subtitle {
+    font-size: 1.1rem;
+    margin-bottom: var(--sp-8);
   }
 }

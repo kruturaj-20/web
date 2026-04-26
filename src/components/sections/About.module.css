@@ -23,6 +23,12 @@
   white-space: nowrap;
 }
 
+@media (max-width: 768px) {
+  .bgText {
+    display: none;
+  }
+}
+
 .title {
   font-size: clamp(3rem, 6vw, 4.5rem);
   margin-top: var(--sp-2);

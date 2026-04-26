@@ -9,11 +9,17 @@ import MagneticButton from '../ui/MagneticButton';
 import styles from './Contact.module.css';
 
 const Contact = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Placeholder: replace with actual form submission logic
+    setIsSubmitting(true);
+    
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    
+    setIsSubmitting(false);
     setSubmitted(true);
   };
 
@@ -40,7 +46,7 @@ const Contact = () => {
 
             <div className={styles.contactList}>
               {[
-                { icon: <Mail size={20} aria-hidden="true" />, label: 'Email', value: 'hello@vanguard.digital', href: 'mailto:hello@vanguard.digital' },
+                { icon: <Mail size={20} aria-hidden="true" />, label: 'Email', value: 'hello@hexstack.digital', href: 'mailto:hello@hexstack.digital' },
                 { icon: <Phone size={20} aria-hidden="true" />, label: 'Call', value: '+1 (555) 123-4567', href: 'tel:+15551234567' },
                 { icon: <MapPin size={20} aria-hidden="true" />, label: 'Visit', value: 'New York, NY 10001', href: null },
               ].map((item, i) => (
@@ -131,13 +137,20 @@ const Contact = () => {
                       required
                     ></textarea>
                   </div>
-                  <MagneticButton strength={0.1}>
+                  <MagneticButton strength={isSubmitting ? 0 : 0.1}>
                     <button
                       type="submit"
                       className="button button-primary"
                       style={{ width: '100%', justifyContent: 'center' }}
+                      disabled={isSubmitting}
                     >
-                      Send Message <Send size={18} aria-hidden="true" />
+                      {isSubmitting ? (
+                        <>Processing... <motion.div animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 1, ease: 'linear' }} style={{ display: 'inline-flex' }}>
+                          <Send size={18} aria-hidden="true" />
+                        </motion.div></>
+                      ) : (
+                        <>Send Message <Send size={18} aria-hidden="true" /></>
+                      )}
                     </button>
                   </MagneticButton>
                 </form>

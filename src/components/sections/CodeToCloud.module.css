@@ -141,5 +141,19 @@
 /* Responsive */
 @media (max-width: 1024px) {
   .splitView { grid-template-columns: 1fr; gap: 4rem; }
-  .arrow { transform: translate(-50%, -50%) rotate(90deg); }
+  .arrow { 
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: rotate(90deg);
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .codeToCloud { padding: 5rem 1rem; }
+  .arrow { display: none; }
+  .editorContent { font-size: 0.8rem; padding: 1rem; }
+  .browser { height: 350px; }
+  .browserContent { padding: 1.25rem; }
 }

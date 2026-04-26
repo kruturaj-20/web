@@ -14,7 +14,7 @@ const MetricStats = () => {
           <span className={styles.label}>Engineered for Excellence</span>
           <h2 className={styles.title}>Scale without compromises</h2>
           <p className={styles.subtitle}>
-            Vanguard is built on a foundation of speed, security, and global availability.
+            Hexstack is built on a foundation of speed, security, and global availability.
           </p>
         </div>
 

@@ -38,7 +38,7 @@ const Integrations = () => {
           <span className={styles.label}>Ecosystem</span>
           <h2 className={styles.title}>Your workflow, unified.</h2>
           <p className={styles.subtitle}>
-            Vanguard integrates seamlessly with the industry-leading tools you already use every day.
+            Hexstack integrates seamlessly with the industry-leading tools you already use every day.
           </p>
         </div>
 
