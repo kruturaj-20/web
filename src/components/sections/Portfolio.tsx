@@ -35,7 +35,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
       viewport={{ once: true, margin: '-10%' }}
       transition={{
         duration: 1.2,
-        ease: [0.19, 1, 0.22, 1],
+        ease: [0.19, 1, 0.22, 1] as any,
         delay: (index % 2) * 0.2,
       }}
       className={styles.projectWrapper}

@@ -50,7 +50,7 @@ const Results = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.12, duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
+              transition={{ delay: index * 0.12, duration: 0.8, ease: [0.19, 1, 0.22, 1] as any }}
               className={styles.statItem}
             >
               <h2 className={styles.value}>

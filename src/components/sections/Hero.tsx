@@ -127,7 +127,7 @@ const Hero = () => {
 
   const itemVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 1, ease: [0.22, 1, 0.36, 1] } },
+    visible: { opacity: 1, y: 0, transition: { duration: 1, ease: [0.22, 1, 0.36, 1] as any } },
   };
 
   const wordVariants: Variants = {
@@ -256,7 +256,7 @@ const Hero = () => {
             initial={{ opacity: 0, rotateY: -15, rotateX: 5 }}
             animate={{ opacity: 1, rotateY: -5, rotateX: 2 }}
             whileHover={{ rotateY: -2, rotateX: 1, scale: 1.02 }}
-            transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] as any }}
             style={{ y: y2 }}
           >
             <div className={styles.dashboardWrapper}>

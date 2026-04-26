@@ -30,7 +30,7 @@ const FAQItem = ({ question, answer, isOpen, onClick, id }: FAQItemProps) => {
         <span className={styles.questionText}>{question}</span>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
-          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] as any }}
           aria-hidden="true"
           className={styles.chevron}
         >
@@ -112,7 +112,7 @@ const FAQ = () => {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: [0.22, 1, 0.36, 1],
+        ease: [0.22, 1, 0.36, 1] as any,
       },
     },
   };
