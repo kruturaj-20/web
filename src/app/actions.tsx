@@ -71,7 +71,7 @@ export async function submitContactForm(formData: FormData) {
     try {
       await resend.emails.send({
         from: 'Hexstack <onboarding@resend.dev>', // You can change this to your domain later
-        to: ['hexstack@gmail.com'],
+        to: ['Hexstacksolutions@gmail.com'],
         subject: `New Lead: ${validatedData.name} - ${validatedData.service}`,
         react: <LeadNotificationTemplate {...validatedData} />,
       });

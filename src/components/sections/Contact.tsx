@@ -54,7 +54,7 @@ const Contact = () => {
 
             <div className={styles.contactList}>
               {[
-                { icon: <Mail size={20} aria-hidden="true" />, label: 'Email', value: 'hexstack@gmail.com', href: 'mailto:hexstack@gmail.com' },
+                { icon: <Mail size={20} aria-hidden="true" />, label: 'Email', value: 'Hexstacksolutions@gmail.com', href: 'mailto:Hexstacksolutions@gmail.com' },
                 { icon: <Phone size={20} aria-hidden="true" />, label: 'Call', value: '+91 7972707589 / 8010487830', href: 'tel:+917972707589' },
                 { icon: <MapPin size={20} aria-hidden="true" />, label: 'Visit', value: 'Palghar, Maharashtra', href: null },
               ].map((item, i) => (
