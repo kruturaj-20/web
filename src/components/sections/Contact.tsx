@@ -2,25 +2,33 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, Mail, MapPin, Phone, CheckCircle } from 'lucide-react';
+import { Send, Mail, MapPin, Phone, CheckCircle, AlertCircle } from 'lucide-react';
 import Section from '../ui/Section';
 import SpotlightCard from '../ui/SpotlightCard';
 import MagneticButton from '../ui/MagneticButton';
 import styles from './Contact.module.css';
+import { submitContactForm } from '@/app/actions';
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setErrorMessage(null);
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    const formData = new FormData(e.currentTarget);
+    const result = await submitContactForm(formData);
     
     setIsSubmitting(false);
-    setSubmitted(true);
+    
+    if (result.success) {
+      setSubmitted(true);
+    } else {
+      setErrorMessage(result.error || "Something went wrong.");
+    }
   };
 
   return (
@@ -46,9 +54,9 @@ const Contact = () => {
 
             <div className={styles.contactList}>
               {[
-                { icon: <Mail size={20} aria-hidden="true" />, label: 'Email', value: 'hello@hexstack.digital', href: 'mailto:hello@hexstack.digital' },
-                { icon: <Phone size={20} aria-hidden="true" />, label: 'Call', value: '+1 (555) 123-4567', href: 'tel:+15551234567' },
-                { icon: <MapPin size={20} aria-hidden="true" />, label: 'Visit', value: 'New York, NY 10001', href: null },
+                { icon: <Mail size={20} aria-hidden="true" />, label: 'Email', value: 'hexstack@gmail.com', href: 'mailto:hexstack@gmail.com' },
+                { icon: <Phone size={20} aria-hidden="true" />, label: 'Call', value: '+91 7972707589 / 8010487830', href: 'tel:+917972707589' },
+                { icon: <MapPin size={20} aria-hidden="true" />, label: 'Visit', value: 'Palghar, Maharashtra', href: null },
               ].map((item, i) => (
                 <motion.div
                   key={i}
@@ -100,6 +108,7 @@ const Contact = () => {
                       <label htmlFor="contact-name">Full Name</label>
                       <input
                         id="contact-name"
+                        name="name"
                         type="text"
                         placeholder="John Doe"
                         className={styles.input}
@@ -107,10 +116,15 @@ const Contact = () => {
                         autoComplete="name"
                       />
                     </div>
+                    {/* Honeypot field - hidden from users, caught by bots */}
+                    <div style={{ display: 'none' }}>
+                      <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+                    </div>
                     <div className={styles.inputGroup}>
                       <label htmlFor="contact-email">Email Address</label>
                       <input
                         id="contact-email"
+                        name="email"
                         type="email"
                         placeholder="john@example.com"
                         className={styles.input}
@@ -119,24 +133,50 @@ const Contact = () => {
                       />
                     </div>
                   </div>
-                  <div className={styles.inputGroup}>
-                    <label htmlFor="contact-service">Service Interested In</label>
-                    <select id="contact-service" className={styles.input}>
-                      <option value="web">Website Development</option>
-                      <option value="app">App Development</option>
-                      <option value="social">Social Media Marketing</option>
-                      <option value="other">Other</option>
-                    </select>
+                  <div className={styles.inputRow}>
+                    <div className={styles.inputGroup}>
+                      <label htmlFor="contact-mobile">Mobile Number</label>
+                      <input
+                        id="contact-mobile"
+                        name="mobile"
+                        type="tel"
+                        placeholder="+91 00000 00000"
+                        className={styles.input}
+                        required
+                      />
+                    </div>
+                    <div className={styles.inputGroup}>
+                      <label htmlFor="contact-service">Service Interested In</label>
+                      <select id="contact-service" name="service" className={styles.input}>
+                        <option value="web">Website Development</option>
+                        <option value="app">App Development</option>
+                        <option value="social">Social Media Marketing</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
                   </div>
                   <div className={styles.inputGroup}>
                     <label htmlFor="contact-message">Message</label>
                     <textarea
                       id="contact-message"
+                      name="message"
                       placeholder="Tell us about your project..."
                       className={styles.textarea}
                       required
                     ></textarea>
                   </div>
+
+                  {errorMessage && (
+                    <motion.div 
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className={styles.errorContainer}
+                    >
+                      <AlertCircle size={16} />
+                      <span>{errorMessage}</span>
+                    </motion.div>
+                  )}
+
                   <MagneticButton strength={isSubmitting ? 0 : 0.1}>
                     <button
                       type="submit"

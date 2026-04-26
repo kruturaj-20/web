@@ -49,9 +49,9 @@ const Footer = () => {
             <div className={styles.linkGroup}>
               <h4>Contact</h4>
               <div className={styles.contactInfo}>
-                <p><Mail size={16} /> hello@hexstack.digital</p>
-                <p><Phone size={16} /> +1 (555) 123-4567</p>
-                <p><MapPin size={16} /> New York, NY</p>
+                <p><Mail size={16} /> hexstack@gmail.com</p>
+                <p><Phone size={16} /> +91 7972707589</p>
+                <p><MapPin size={16} /> Palghar, Maharashtra</p>
               </div>
             </div>
           </div>
